@@ -55,7 +55,7 @@ To display each unit of the removable packages vertically, use the following que
   ```powershell
   Set-ExecutionPolicy -ExecutionPolicy Unrestricted
   $VerbosePreference = "Continue"
-  RemoveOnIoTEnterpriseS.ps1 -offlineImageFolderPath .\offline\ -RemoveUnit IIS
+  RemoveOnIoTEnterpriseS.ps1 -offlineImageFolderPath .\offline\ -RemoveUnit win32calc
   ```
 
 5. Offline WinSxS cleanup
