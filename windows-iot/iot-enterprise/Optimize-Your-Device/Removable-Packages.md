@@ -32,7 +32,7 @@ To see the full list of the packages available to be removed, download the [Powe
 To display each unit of the removable packages vertically, use the following query:
 
 ```powershell
-.\RemoveOnIoTEnterpriseS.ps1 -List | ft -Wrap -Property Name, @{Expression={$_.Packages -join "'r'n"};Name="Packages"}
+.\RemoveOnIoTEnterpriseS.ps1 -List | ft -Wrap -Property Name, @{Expression={$_.Packages -join ", "};Name="Packages"}
 ```
 
 ## How to remove packages offline
@@ -55,7 +55,7 @@ To display each unit of the removable packages vertically, use the following que
   ```powershell
   Set-ExecutionPolicy -ExecutionPolicy Unrestricted
   $VerbosePreference = "Continue"
-  RemoveOnIoTEnterpriseS.ps1 -offlineImageFolderPath .\offline\ -RemoveUnit IIS
+  RemoveOnIoTEnterpriseS.ps1 -offlineImageFolderPath .\offline\ -RemoveUnit win32calc
   ```
 
 5. Offline WinSxS cleanup
@@ -94,7 +94,7 @@ RemoveOnIoTEnterpriseS.ps1 -List | foreach { .\RemoveOnIoTEnterpriseS.ps1 -offli
   ```powershell
   Set-ExecutionPolicy -ExecutionPolicy Unrestricted
   $VerbosePreference = "Continue"
-  RemoveOnIoTEnterpriseS.ps1 -isOnline -RemoveUnit IIS
+  RemoveOnIoTEnterpriseS.ps1 -isOnline -RemoveUnit win32calc
   ```
 6. Reboot your device  
 
